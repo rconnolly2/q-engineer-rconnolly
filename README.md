@@ -27,8 +27,9 @@ pip install -r requirements.txt
 Tests are executed using a BDD test runner.
 
 Run all tests with:
-
+```bash
 behave automation/features
+```
 
 ---
 
@@ -83,11 +84,11 @@ In this case, for a status update feature, I would think about all possible edge
 In the problem above, 
 1. **How would you define test data against which you could run your scenarios?**
     - In question 7, I described different scenarios a user could face when trying to update their status in the Facebook web application. The test data in this case would mainly be invalid messages, such as values below the minimum or above the maximum character limit, an empty field, whitespace-only input, or a field containing special characters or emojis.
-2. What are the dependencies?
+2. **What are the dependencies?**
     - I am not fully sure if this refers to actual libraries, but for automation we would need Selenium for browser interaction, in my case using Python. Network connectivity would also be required for posting updates, and access to an API would be useful for retrieving status updates. A threading library could also be useful to support concurrent test execution and reduce execution time.
-3. How would you manage the test data so if required your tests could be run offline?
+3. **How would you manage the test data so if required your tests could be run offline?**
     - For offline execution, I would create a mock API. In my case, I would use the mock module from Python’s unittest library to allow tests to run without any real network connection or database interaction. Another option would be to save data locally from the last online execution and reuse it.
-4. How about running the test online (e.g. against live web site)? What's your approach?
+4. **How about running the test online (e.g. against live web site)? What's your approach?**
     - For online execution, it is important not to use production servers. Tests should run against test environments and databases, using fake users created specifically for testing purposes.
 
 ---

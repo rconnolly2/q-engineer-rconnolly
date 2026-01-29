@@ -46,7 +46,7 @@ behave tests/features
 
 5. **You are including new features in your team's current automated solution. Which steps would you take to ensure there is no adverse effect in the existing functionalities?** Compare the new and old automated solution versions and assess the impact of any differences.
 
-6. **Which tools you use for API Testing?** Soap UI and Postman.
+6. **Which tools you use for API Testing?** Postman.
 
 ---
 

@@ -28,7 +28,7 @@ Tests are executed using a BDD test runner.
 
 Run all tests with:
 ```bash
-behave automation/features
+behave tests/features
 ```
 
 ---
@@ -113,5 +113,13 @@ Start in the Home Page https://www.globalsqa.com/angularJs-protractor/BankingPro
 7. **Validate** that the customer has been successfully deleted
 
 ### My Solution
+
+The solution uses a simple Page Object Model approach to separate test intent from implementation details.
+The BankManagerPage class encapsulates all Selenium interactions related to the Bank Manager workflow, while a Customer model is used to represent test data passed between steps.
+Step definitions focus on behaviour and readability, delegating UI interactions to the page object to keep the scenarios clear and maintainable.
+
+The class diagram below illustrates the main components of the solution and their relationships.
+
+![class diagram](docs/class_diagram.png)
 
 ---

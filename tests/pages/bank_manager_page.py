@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from tests.models.customer import Customer
 
-
 class BankManagerPage:
     """Page Object for Bank Manager actions in the banking app."""
 

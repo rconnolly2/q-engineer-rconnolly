@@ -1,11 +1,9 @@
 from behave import given, when, then
 from webdriver_manager.chrome import ChromeDriverManager
 
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import Chrome
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
 from tests.pages.bank_manager_page import BankManagerPage
 from tests.models.customer import Customer
@@ -13,7 +11,10 @@ from tests.models.customer import Customer
 @given("I am on the banking application home page")
 def step_open_home(context):
     service = Service(ChromeDriverManager().install())
-    context.driver = Chrome(service=service)
+    options = Options()
+    options.add_argument("--disable-logging")
+    options.add_argument("--log-level=3")
+    context.driver = Chrome(service=service, options=options)
     context.driver.get(
         "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"
     )
